@@ -3,9 +3,12 @@ const axios = require('axios');
 
 exports.homeRoutes = (req, res) => {
     // Make a get request to /api/users
+    console.log("1");
     axios.get('http://localhost:3000/api/users')
         .then(function(response){
+            console.log("2");
             res.render('index',{users: response.data});
+            console.log("3");
         })
         .catch(err =>{
             res.send(err);
